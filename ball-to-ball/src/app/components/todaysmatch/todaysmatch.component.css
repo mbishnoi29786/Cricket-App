@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Rowdies';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/rowdies/v15/ptRJTieMYPNBAK21zrc.ttf) format('truetype');
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-family: 'Rowdies', cursive;
+    font-size: calc(12px + 4 * ((100vw - 400px) / 400));
+    line-height: 1.25;
+  }
+  @media screen and (max-width: 400px) {
+    html {
+      font-size: 12px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    html {
+      font-size: 20px;
+    }
+  }
+  body {
+    background: #6a558e;
+    overflow: hidden;
+  }
+  .example {
+    margin: 3rem auto;
+    text-align: center;
+  }
+  .example > .text {
+    display: inline-block;
+    position: relative;
+    padding: 1rem 3rem;
+    transform: translateY(-0.5rem);
+    text-transform: uppercase;
+    perspective: 10rem;
+  }
+  .example > .text:first-of-type {
+    padding-left: 3rem;
+    background-color: white;
+  }
+  .example > .text:first-of-type::before {
+    content: '';
+    height: 90%;
+    width: 100%;
+    margin-left:10rem;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    transform: rotateY(10deg) translateX(calc());
+    z-index: -1;
+    background: #ffffff;
+  }
+  .example > .text:last-of-type {
+    padding-right: 4rem;
+    background-color: white;
+  }
+  .example > .text:last-of-type::after {
+    content: '';
+    height: 90%;
+    width: 100%;
+    margin-left:13rem;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    transform: rotateY(-10deg) translateX(calc());
+    z-index: -1;
+    background: #ffffff;
+  }
+  .example > .counter {
+    display: inline-block;
+    position: relative;
+    padding: 0.5rem 2rem;
+  }
+  .example > .counter > .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #6a558e;
+    border-radius: 0.7rem;
+  }
+  .example > .counter > .background::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    z-index: -1;
+    border-radius: 1rem;
+    border: solid #ffffff 4px;
+    background: #6a558e;
+  }
+  .example > .counter > .background::after {
+    content: '';
+    width: 80%;
+    padding-top: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: solid #fff 4px;
+    background: #6a558e;
+  }
+  .example > .counter > .number {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    transform: translateY(-2px);
+    color: #ffffff;
+  }
+  .example > .counter > .number:first-of-type {
+    font-size: 2rem;
+  }
+  .example > .counter > .number:first-of-type::after {
+    content: '/';
+    display: inline-block;
+    padding: 0 0.2rem;
+    font-size: 2.5rem;
+  }
+  .example > .counter > .number:last-of-type {
+    font-size: 1rem;
+    transform: translateY(-0.8rem) translateX(-0.2rem);
+  }

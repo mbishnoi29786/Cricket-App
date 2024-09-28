@@ -1,0 +1,26 @@
+.palette {
+    --g:10px; /* The gap between shapes*/
+    --s:50px; /* the size*/
+  
+    height: 350px;
+    width: 350px;
+    position:relative;
+    display:inline-block;
+    overflow:hidden;
+  }
+  .palette > * {
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      border:var(--s) solid var(--c);
+      border-radius:50%;
+      clip-path:polygon(
+        calc(50% + var(--g)/2) 50%, 
+        calc(50% + var(--g)/2) 0%, 
+        100% 0%,
+        100% calc(0% - var(--g)/2),
+        50% calc(50% - var(--g)/2)); 
+    }
+   

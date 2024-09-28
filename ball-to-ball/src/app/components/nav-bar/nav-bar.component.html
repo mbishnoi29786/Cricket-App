@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light  bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" (click)="OnClick('matches')">Cricket App</a>
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <button class="btn" type="radio" name="options" autocomplete="off" id="option1" (click)="OnClick('matches')">Matches</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn" type="radio" name="options" autocomplete="off"  id="option2" (click)="OnClick('players')">Total Players</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn" type="radio" autocomplete="off"  name="options" id="option3" (click)="OnClick('matchform')" *ngIf="localstoragehandler.getItem('token')" >Sechedule Matches</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn"  type="radio" name="options" id="option4" (click)="OnClick('todaymatch')" autocomplete="off">Today's Matches</button>
+          </li>
+        </ul>
+        <ng-container class="nav-item mx-auto"><app-toaster class="nav-link"></app-toaster></ng-container>
+        <button class="btn btn-outline-primary nav-item ms-auto" (click)="onLoginButtonClick()"
+          [style.display]="loginButtonDisplay()">Login</button>
+        <button class="btn btn-outline-primary nav-item ms-auto" (click)="onLogoutButtonClick()"
+          [style.display]="logoutButtonDisplay()">LogOut</button>
+
+      </div>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>

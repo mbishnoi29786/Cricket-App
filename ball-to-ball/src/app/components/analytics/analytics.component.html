@@ -1,0 +1,9 @@
+<div>
+
+  <select class="classic"  (change)="onChange($event)">
+  <option disabled selected>Select Analysis</option>
+    <option [value]="graph.value" *ngFor= "let graph of graphs">{{graph.name}}</option>
+
+  </select>
+<app-bargraph [team1Runs]="team1Runs" [team2Runs]="team2Runs" [overs]="overs"></app-bargraph>
+</div>
