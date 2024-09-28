@@ -1,0 +1,50 @@
+<table class="table table-striped container main">
+  <tbody>
+    <tr>
+    <th><b>Team</b> {{matchData?.team1Name|titlecase}}<b *ngIf="BattingTeam">*</b></th>
+    <th><b> Score: </b>{{matchData?.team1Runs}}</th>
+    <th><b>Team</b> {{matchData?.team2Name|titlecase}}<b *ngIf="!BattingTeam">*</b> </th>
+    <th><b> Score: </b>{{matchData?.team2Runs}}</th>
+    <th><b>Match Venue</b>: {{matchData?.venue|titlecase}}</th>
+  </tbody>
+</table>
+
+ <table class="table table-striped container">
+    <tbody>
+      <tr>
+        <th>Batsmen</th>
+        <th>runs</th>
+        <th>balls</th>
+      </tr>
+      <tr>
+        <td>{{playerOnstrike?.playerName}}*</td>
+        <td>{{playerOnstrike?.playerRuns}}</td>
+        <td>{{playerOnstrike?.ballsFaced}}</td>
+      </tr>
+      <tr>
+        <td>{{playerOnNonStrike?.playerName}}</td>
+        <td>{{playerOnNonStrike?.playerRuns}}</td>
+        <td>{{playerOnNonStrike?.ballsFaced}}</td>
+      </tr>
+      <tr>
+        <th>Total</th>
+        <td>{{TotalRuns}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped container ">
+    <tbody>
+      <tr>
+        <th>Bowler</th>
+        <th>BallsBowled</th>
+        <th>Wickets</th>
+        <th>RunsOnBowling</th>
+      </tr>
+      <tr>
+        <td>{{bowlerId?.playerName}}*</td>
+        <td>{{bowlerId?.ballsBowled}}</td>
+        <td>{{bowlerId?.playerWickets}}</td>
+        <td>{{bowlerId?.runsOnBowling}}</td>
+      </tr>
+    </tbody>
+  </table>

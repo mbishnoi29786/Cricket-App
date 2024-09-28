@@ -1,0 +1,14 @@
+      <h2>Ball Direction</h2>
+   <div class="palette" style="--s:160px;--g:0px" >
+    <div class="color1"  style="transform:rotate(45deg);" [style.--c]="'red'" (click)="ChangeColor($event)" ></div>
+    <div class="color2" style="transform:rotate(90deg); --c:red " (click)="ChangeColor($event)"></div>
+    <div class="color3 "style="transform:rotate(135deg); --c:red " (click)="ChangeColor($event)"></div>
+    <div class="color4"style="transform:rotate(180deg); --c:red " (click)="ChangeColor($event)"></div>
+    <div class="color5"style="transform:rotate(-45deg); --c:red " (click)="ChangeColor($event)"></div>
+    <div class="color6"style="transform:rotate(-90deg); --c:red " (click)="ChangeColor($event)"></div>
+    <div class="color7"style="transform:rotate(-135deg); --c:red " (click)="ChangeColor($event)"></div>
+    <div class="color8" style="transform:rotate(0deg); --c:red " (click)="ChangeColor($event)"></div>
+  </div>
+
+
+  <h2>{{closeResult}}</h2>

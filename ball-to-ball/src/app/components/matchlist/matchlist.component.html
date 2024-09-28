@@ -1,0 +1,22 @@
+<div class="coc-form">
+    <div class="coc-block-row">
+      <label class="coc-block-label" for="dateofbirth">Filter</label>
+      <div class="coc-block">
+        <div>
+        <input class="coc-input" type="date" name="dateofbirth" id="dateofbirth" (input)="filterMatches($event)">
+        <button style="margin-left:30px;" class="btn btn-primary" (click)="reset()">Clear Filter</button></div>
+      </div>
+    </div>
+  </div>
+<app-table [matchList]="matchlist" [route]="route"></app-table>
+<footer>
+  <div class='example'>
+    <button class='text' (click)="onPreviousClick()" [disabled]="((page-1)<=0)">Previous</button>
+    <div class='counter'>
+        <span class='number'>{{page}}</span>
+        <div class='background'></div>
+        <span class='number'>{{totalPages}}</span>
+    </div>
+    <button class='text' (click)="onNextClick()" [disabled]="((page+1)>totalPages)">Next</button>
+</div>
+</footer>
