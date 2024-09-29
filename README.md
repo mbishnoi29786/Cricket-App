@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CricketApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
@@ -25,3 +26,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+=======
+# Cricket-App
+Cricket app for enthusiasts
+
+
+## Note
+I am currently in the process of uploading various projects to GitHub. Due to other commitments, this may take a few days. I appreciate your understanding and patience during this time. 
+>>>>>>> 35f0020 (Update README.md)

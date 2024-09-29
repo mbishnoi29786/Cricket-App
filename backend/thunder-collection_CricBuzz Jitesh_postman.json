@@ -1,0 +1,277 @@
+{
+    "info": {
+        "name": "CricBuzz",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "http://localhost:8000/matches/selectNextBatsman",
+            "request": {
+                "method": "PATCH",
+                "url": {
+                    "raw": "http://localhost:8000/matches/selectNextBatsman",
+                    "path": [
+                        "matches",
+                        "selectNextBatsman"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"matchId\": \"6405816f760df94cc5312ba7\",\n  \"newBatsmanId1\": \"640190d9af05e1f9d94e6fae\",\n  \"newBatsmanId2\": \"640190d9af05e1f9d94e6faa\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://localhost:8000/matches/updateScore",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:8000/matches/updateScore",
+                    "path": [
+                        "matches",
+                        "updateScore"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"matchId\": \"6405816f760df94cc5312ba7\",\n  \"runs\": 1,\n  \"validity\": \"valid\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://localhost:8000/matches/selectNextBowler",
+            "request": {
+                "method": "PATCH",
+                "url": {
+                    "raw": "http://localhost:8000/matches/selectNextBowler",
+                    "path": [
+                        "matches",
+                        "selectNextBowler"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"matchId\": \"6405816f760df94cc5312ba7\",\n  \"newBowlerId\": \"640190d5af05e1f9d94e6f92\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://localhost:8000/matches/add",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:8000/matches/add",
+                    "path": [
+                        "matches",
+                        "add"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                },
+                "header": [
+                    {
+                        "key": "authToken",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA1OTE0OWVkMTM3ZWQxZTU4MjdmNWQiLCJpYXQiOjE2NzgwODY1ODJ9.DtDRs_TvZxJ_Gl4e1fWWuA87rfGhizGSFj6LNTISYJQ"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*",
+                        "disabled": true
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "Thunder Client (https://www.thunderclient.com)",
+                        "disabled": true
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"team1Name\": \"csk\",\n  \"team1Players\": [\"640190d5af05e1f9d94e6f92\",\"640190d6af05e1f9d94e6f94\",\"640190d7af05e1f9d94e6f96\",\"640190d7af05e1f9d94e6f98\",\"640190d7af05e1f9d94e6f9a\",\"640190d7af05e1f9d94e6f9c\",\"640190d7af05e1f9d94e6f9e\",\"640190d8af05e1f9d94e6fa0\",\"640190d8af05e1f9d94e6fa2\",\"640190d8af05e1f9d94e6fa4\",\"640190d8af05e1f9d94e6fa6\"],\n  \"team2Name\": \"rcb\",\n  \"team2Players\": [\"640190d8af05e1f9d94e6fa8\",\"640190d9af05e1f9d94e6faa\",\"640190d9af05e1f9d94e6fac\",\"640190d9af05e1f9d94e6fae\",\"640190d9af05e1f9d94e6fb0\",\"640190daaf05e1f9d94e6fb2\",\"640190daaf05e1f9d94e6fb4\",\"640190daaf05e1f9d94e6fb6\",\"640190daaf05e1f9d94e6fb8\",\"640190dbaf05e1f9d94e6fba\",\"640190dbaf05e1f9d94e6fbc\"],\n  \"date\": \"Wed Mar 01 2023 15:14:23 GMT+0530 (India Standard Time)\",\n  \"venue\": \"India\",\n  \"totalOvers\": \"1\",\n  \"firstBattingTeam\": 2\n}"
+                }
+            }
+        },
+        {
+            "name": "http://localhost:8000/matches/undoUpdateScore",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:8000/matches/undoUpdateScore",
+                    "path": [
+                        "matches",
+                        "undoUpdateScore"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"matchId\": \"6405816f760df94cc5312ba7\",\n  \"runs\": 3,\n  \"validity\": \"wide\",\n  \"wicketType\": \"stumped\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://localhost:8000/players/create",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:8000/players/create",
+                    "path": [
+                        "players",
+                        "create"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"firstName\": \"Virat\",\n  \"lastName\": \"Kohli\",\n  \"jerseyNo\": 26,\n  \"age\": 26,\n  \"type\": \"batsman\",\n  \"team\": \"rcb\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://localhost:8000/matches/fetch",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/matches/fetch",
+                    "path": [
+                        "matches",
+                        "fetch"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                }
+            }
+        },
+        {
+            "name": "http://localhost:8000/players/fetch",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/players/fetch",
+                    "path": [
+                        "players",
+                        "fetch"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                }
+            }
+        },
+        {
+            "name": "http://localhost:8000/users/signup",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:8000/users/signup",
+                    "path": [
+                        "users",
+                        "signup"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"phoneNo\": 1234557891,\n  \"password\": \"qweqwqww\",\n  \"confirmPassword\": \"qweqwqww\"\n}"
+                }
+            }
+        },
+        {
+            "name": "http://localhost:8000/users/login",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:8000/users/login",
+                    "path": [
+                        "users",
+                        "login"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"phoneNo\": 1234557891,\n  \"password\": \"qweqwqwwas\"\n}"
+                }
+            }
+        }
+    ]
+}
