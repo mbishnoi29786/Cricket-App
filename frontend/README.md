@@ -104,7 +104,6 @@ zone.js: For running Angular’s change detection mechanism.
 The project structure is as follows:
 
 ```ruby
-Copy
 frontend/
 │
 ├── src/
