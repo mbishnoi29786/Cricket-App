@@ -1,0 +1,48 @@
+.match-table-container {
+  margin-top: 20px;
+}
+
+.match-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.match-table th,
+.match-table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.match-table th {
+  background-color: #f9f9f9;
+}
+
+.match-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-details {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-details:hover {
+  background-color: #0056b3;
+}
+
+.btn-score {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-score:hover {
+  background-color: #218838;
+}

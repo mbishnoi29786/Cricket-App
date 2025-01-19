@@ -1,0 +1,25 @@
+<div class="match-table-container">
+    <table class="match-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Match</th>
+          <th>Details</th>
+          <th *ngIf="localStorageHandler.getItem('token') !== null">Add Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let match of matchList">
+          <td>{{ match.date | date }}</td>
+          <td>{{ match.team1Name | titlecase }} vs {{ match.team2Name | titlecase }}</td>
+          <td>
+            <button (click)="OnViewDetails(match.id)" class="btn btn-details">View Details</button>
+          </td>
+          <td *ngIf="localStorageHandler.getItem('token') !== null">
+            <button *ngIf="(date === formatDate(match.date))" (click)="OnAddScore(match.id)" class="btn btn-score">Add Score</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

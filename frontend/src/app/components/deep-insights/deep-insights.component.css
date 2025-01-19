@@ -1,0 +1,112 @@
+/* deep-insights.component.css */
+.container-fluid {
+  margin-top: 30px;
+}
+
+.match-info {
+  margin-bottom: 30px;
+}
+
+.match-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.match-actions button {
+  margin-right: 15px;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.match-details {
+  margin-top: 30px;
+}
+
+.over-details {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.over-details .over-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.over-details .over-info span {
+  flex: 1;
+}
+
+.table th,
+.table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table th {
+  background-color: #343a40;
+  color: white;
+  font-weight: bold;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.text-success {
+  color: #28a745 !important;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+.valid {
+  color: #28a745;
+}
+
+.invalid {
+  color: #dc3545;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .match-info {
+    margin-top: 20px;
+  }
+
+  .match-heading {
+    font-size: 18px;
+  }
+
+  .match-actions button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .over-details {
+    padding: 15px;
+  }
+
+  .table th,
+  .table td {
+    font-size: 14px;
+  }
+
+  .over-details .over-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .over-details .over-info span {
+    margin-bottom: 5px;
+  }
+}

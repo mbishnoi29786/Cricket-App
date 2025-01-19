@@ -1,0 +1,55 @@
+<button class="btn btn-primary" type="submit" (click)="OnClick()">Go back</button>
+<div class="center">
+  <div class="card">
+    <div class="additional">
+      <div class="user-card">
+        <div class="level center">
+          Age {{player?.age}}
+        </div>
+        <div class="points center">
+          5,312 Points
+        </div>
+        <img src="https://bootdey.com/img/Content/avatar/avatar1.png"
+          class="img-fluid d-block mx-auto rounded-circle img-thumbnail mb-4">
+      </div>
+      <div class="more-info">
+        <h1>{{player?.firstName +' '+ player?.lastName|titlecase }}</h1>
+        <div class="coords">
+          <span>Team Name-</span>
+          <span>{{player?.team | titlecase}}</span>
+        </div>
+        <div class="coords">
+          <span>Role- {{player?.type| titlecase}}</span>
+          <span>Chandigarh, India</span>
+        </div>
+        <div class="stats">
+          <div>
+            <div class="title">Runs</div>
+            <i class="fa fa-trophy"></i>
+            <div class="value">{{player?.runs}}</div>
+          </div>
+          <div>
+            <div class="title">Matches</div>
+            <i class="fa fa-gamepad"></i>
+            <div class="value">{{player?.noOfMatches}}</div>
+          </div>
+          <div>
+            <div class="title">Wickets</div>
+            <i class="fa fa-group"></i>
+            <div class="value">{{player?.wickets}}</div>
+          </div>
+          <div>
+            <div class="title">Jersey No.</div>
+            <i class="fa fa-coffee"></i>
+            <div class="value">{{player?.jerseyNo}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="general">
+      <h1>{{player?.firstName +' '+ player?.lastName|titlecase }}</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a volutpat mauris, at molestie lacus. Nam
+        vestibulum sodales odio ut pulvinar.</p>
+      <span class="more">Mouse over the card for more info</span>
+    </div>
+  </div>

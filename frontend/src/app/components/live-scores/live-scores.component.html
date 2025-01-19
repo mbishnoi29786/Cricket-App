@@ -1,0 +1,50 @@
+<div class="live-scores-container">
+  <!-- Match Info Section -->
+  <div class="match-info">
+    <div class="match-header">
+      <h2>{{matchData?.team1Name | titlecase}} vs {{matchData?.team2Name | titlecase}}</h2>
+      <p class="venue">Venue: {{matchData?.venue | titlecase}}</p>
+    </div>
+    <div class="match-scores">
+      <div class="team-info" [ngClass]="{'active': BattingTeam}" (mouseenter)="onTeamHover(1)" (mouseleave)="onTeamLeave()">
+        <h3>{{matchData?.team1Name | titlecase}} <span *ngIf="BattingTeam">(Batting)</span></h3>
+        <p>Score: <strong>{{matchData?.team1Runs}} / {{matchData?.team1FallOfWickets.length}}</strong></p>
+      </div>
+      <div class="team-info" [ngClass]="{'active': !BattingTeam}" (mouseenter)="onTeamHover(2)" (mouseleave)="onTeamLeave()">
+        <h3>{{matchData?.team2Name | titlecase}} <span *ngIf="!BattingTeam">(Batting)</span></h3>
+        <p>Score: <strong>{{matchData?.team2Runs}} / {{matchData?.team2FallOfWickets.length}}</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Batsmen Stats Section -->
+  <div class="player-stats">
+    <div class="batsman">
+      <h3>{{playerOnstrike?.playerName}} <span class="highlight">*</span></h3>
+      <div class="stats">
+        <p><strong>Runs:</strong> {{playerOnstrike?.playerRuns}}</p>
+        <p><strong>Balls:</strong> {{playerOnstrike?.ballsFaced}}</p>
+      </div>
+    </div>
+    <div class="batsman">
+      <h3>{{playerOnNonStrike?.playerName}}</h3>
+      <div class="stats">
+        <p><strong>Runs:</strong> {{playerOnNonStrike?.playerRuns}}</p>
+        <p><strong>Balls:</strong> {{playerOnNonStrike?.ballsFaced}}</p>
+      </div>
+    </div>
+    <div class="total">
+      <h3>Total Runs: <span>{{TotalRuns}}</span></h3>
+    </div>
+  </div>
+
+  <!-- Bowler Stats Section -->
+  <div class="bowler-stats">
+    <h3>{{bowlerId?.playerName}} <span class="highlight">*</span></h3>
+    <div class="stats">
+      <p><strong>Balls Bowled:</strong> {{bowlerId?.ballsBowled}}</p>
+      <p><strong>Wickets:</strong> {{bowlerId?.playerWickets}}</p>
+      <p><strong>Runs:</strong> {{bowlerId?.runsOnBowling}}</p>
+    </div>
+  </div>
+</div>

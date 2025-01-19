@@ -1,0 +1,249 @@
+/* Global Styles */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fc;
+  color: #333;
+}
+
+/* Container Styles */
+.container-fluid {
+  background-color: #ffffff;
+  margin-left: 5%;
+  width: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+thead.main {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+}
+
+td {
+  color: #555;
+  font-size: 16px;
+}
+
+/* Button Styles */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Custom Button Styles */
+.btn-light {
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-success {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.outButtonsTable {
+  margin-top: 10px;
+}
+
+.outButtons {
+  width: 100%;
+  background-color: #e74c3c;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+.outButtons:hover {
+  background-color: #c0392b;
+}
+
+/* Modal Styles */
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-text {
+  height: 550px;
+  overflow-y: auto;
+}
+
+.card-text p {
+  word-wrap: break-word;
+}
+
+/* Select Dropdown */
+select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+/* Flexbox Layout for Player Select */
+td select {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Calculator Section */
+.calculator-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.calculator-keys button {
+  padding: 15px;
+  font-size: 18px;
+  background-color: #ecf0f1;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  color: #34495e;
+}
+
+.calculator-keys button:hover {
+  background-color: #bdc3c7;
+}
+
+.calculator-keys button:disabled {
+  background-color: #f1f1f1;
+}
+
+/* Image Background */
+.image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .calculator-keys {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  .container-fluid {
+    margin-left: 2%;
+    width: 96%;
+  }
+
+  .outButtons {
+    font-size: 14px;
+  }
+}
+
+
+
+/* Checkbox Styling */
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  accent-color: #3498db; 
+  transition: transform 0.3s ease;
+}
+
+/* Checkbox Hover Effect */
+input[type="checkbox"]:hover {
+  transform: scale(1.1);
+}
+
+
+
+td input[type="checkbox"] {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* When checkbox is selected (checked) */
+input[type="checkbox"]:checked {
+  background-color: #2980b9;
+  border-color: #2980b9;
+}
+
+/* Custom styling for checkbox labels */
+td label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Adjust layout for table rows */
+.table td {
+  padding: 12px;
+}
+
+.table-stripped thead  {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.table-stripped thead td:nth-child(odd) {
+  background-color: #f9f9f9;
+  
+}
+
+.table-stripped thead td:nth-child(even) {
+  background-color: #ffffff;
+}

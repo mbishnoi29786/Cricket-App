@@ -1,0 +1,20 @@
+<div class="analytics-container">
+  <h2 class="title">Match Analytics</h2>
+
+  <!-- Dropdown to Select Graph Type -->
+  <div class="select-container">
+    <label for="graph-select">Select Graph Type</label>
+    <select id="graph-select" class="classic" (change)="onChange($event)">
+      <option disabled selected>Select Analysis</option>
+      <option [value]="graph.value" *ngFor="let graph of graphs">{{ graph.name }}</option>
+    </select>
+  </div>
+
+  <!-- Display Loading Spinner -->
+  <div *ngIf="loading" class="loading-spinner">
+    Loading analytics...
+  </div>
+
+  <!-- Bar Graph Component -->
+  <app-bargraph *ngIf="!loading" [team1Runs]="team1Runs" [team2Runs]="team2Runs" [overs]="overs"></app-bargraph>
+</div>

@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <div class="match-info text-center mb-4">
+    <h3 class="match-heading">
+      {{ matchData?.team1Name | titlecase }} vs {{ matchData?.team2Name | titlecase }}
+    </h3>
+    <div class="match-actions">
+      <button class="btn btn-primary" (click)="team1Data()">
+        {{ matchData?.team1Name | titlecase }} Innings
+      </button>
+      <button class="btn btn-primary" (click)="team2Data()">
+        {{ matchData?.team2Name | titlecase }} Innings
+      </button>
+    </div>
+  </div>
+
+  <!-- Match Details Section -->
+  <div *ngIf="setFetch === 1 || setFetch === 2" class="match-details">
+    <ng-container *ngFor="let overData of oversArray; let over = index">
+      <ng-container *ngIf="setFetch === 1 ? overData?.bowlerId1 : overData?.bowlerId2">
+        <!-- Match Information Row -->
+        <div class="over-details" [ngStyle]="{ 'border-color': arrayOfColours[over] }">
+          <div class="over-info">
+            <span><strong>Over No.:</strong> {{ over + 1 }}</span>
+            <span>
+              <strong>Bowler:</strong> 
+              {{ findBowlerData(setFetch === 1 ? overData.bowlerId1 : overData.bowlerId2)?.[0]?.playerName | titlecase }}
+            </span>
+            <span><strong>Runs:</strong> {{ setFetch === 1 ? overData.team1Runs : overData.team2Runs }}</span>
+            <span><strong>Wickets:</strong> {{ setFetch === 1 ? overData.team1Wickets : overData.team2Wickets }}</span>
+          </div>
+
+          <!-- Ball-by-Ball Information -->
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Ball No.</th>
+                <th>Validity</th>
+                <th>Runs</th>
+                <th>Wicket</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let ballsData of ballsArray">
+                <tr *ngIf="ballsData.overNo === over + 1" 
+                    [ngClass]="{
+                      'text-danger': ballsData.wicketType,
+                      'text-success': !ballsData.wicketType
+                    }">
+                  <td>{{ ballsData.ballNo }}</td>
+                  <td [ngClass]="ballsData.validity === 'valid' ? 'valid' : 'invalid'">{{ ballsData.validity }}</td>
+                  <td>{{ ballsData.runs }}</td>
+                  <td>{{ ballsData.wicketType }}</td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

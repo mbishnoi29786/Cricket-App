@@ -1,0 +1,132 @@
+.live-scores-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+/* Match Info Section */
+.match-info {
+  background: #2d3e50;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.match-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.match-header .venue {
+  font-size: 1rem;
+  color: #4CAF50;
+}
+
+.match-scores {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.team-info {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f7f9fc;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.team-info.active {
+  background-color: #4CAF50;
+  border: 2px solid #4CAF50;
+}
+
+.team-info h3 {
+  font-weight: 500;
+  color: #2d3e50;
+  margin-bottom: 5px;
+}
+
+.team-info p {
+  font-weight: 600;
+  color: #2d3e50;
+  margin: 0;
+}
+
+.team-info span {
+  font-weight: 400;
+  color: #2d3e50;
+}
+
+/* Player Stats Section */
+.player-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.batsman, .bowler-stats {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.batsman h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.batsman .stats p {
+  font-size: 1rem;
+  margin: 5px 0;
+  color: #555;
+}
+
+.total h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #FF5722;
+}
+
+/* Highlighted Player */
+.highlight {
+  color: #FF5722;
+}
+
+/* Bowler Stats Section */
+.bowler-stats h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.bowler-stats .stats p {
+  font-size: 1rem;
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .match-scores {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .player-stats {
+    grid-template-columns: 1fr;
+  }
+}

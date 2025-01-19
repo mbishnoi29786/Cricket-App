@@ -1,0 +1,133 @@
+<div *ngFor="let match of matchDetail; let j = index">
+    <!-- Match Header -->
+    <div class="match-header text-center mb-4">
+        <h2>{{ match?.team1Name | titlecase }} vs {{ match?.team2Name | titlecase }}</h2>
+        <p class="text-muted">{{ match?.venue }} | {{ match?.date | date: 'medium' }}</p>
+    </div>
+
+    <!-- Match Status -->
+    <div *ngIf="status === 1" class="match-status bg-success text-white text-center p-3 mb-4">
+        <h3>Match Ongoing</h3>
+        <p>Current Progress: <strong>{{ match?.firstBattingTeam === 1 ? match?.team1Name : match?.team2Name }}</strong> is batting.</p>
+        <button class="btn btn-light" (click)="toLiveScore()">View Live Score</button>
+    </div>
+
+    <!-- Match Scheduled -->
+    <div *ngIf="status === 2" class="match-status bg-warning text-white text-center p-3 mb-4">
+        <h3>Match Scheduled</h3>
+        <p>This match is scheduled for <strong>{{ match?.date | date: 'fullDate' }}</strong></p>
+    </div>
+
+    <!-- Match Completed (Winner and Score Display) -->
+    <div *ngIf="status === 0 && match?.matchComplete" class="match-status bg-success text-white text-center p-3 mb-4">
+        <h3>Match Completed</h3>
+        <div class="winner-card">
+            <div class="winner-team">
+                <div class="team-card">
+                    <h5>{{ match?.team1Name | titlecase }}</h5>
+                    <p>Score: {{ match?.team1Runs }}/{{ match?.team1FallOfWickets.length }} ({{ (match?.scoreCardTeam1?.length / 6) | number: '1.1-1' }} overs)</p>
+                </div>
+                <div class="vs">VS</div>
+                <div class="team-card">
+                    <h5>{{ match?.team2Name | titlecase }}</h5>
+                    <p>Score: {{ match?.team2Runs }}/{{ match?.team2FallOfWickets.length }} ({{ (match?.scoreCardTeam2?.length / 6) | number: '1.1-1' }} overs)</p>
+                </div>
+            </div>
+        
+            <!-- Determine Winner -->
+            <div class="match-winner">
+                <h4>
+                    <!-- Display winner based on the rules of who batted first -->
+                    {{ getWinner(match) }} Wins!
+                </h4>
+            </div>
+        </div>
+
+        <!-- Match Controls (Deep Insight & Analytics) -->
+        <div class="text-center mb-4 insight-buttons">
+            <button class="btn btn-outline-primary" (click)="routeToGiven('deep-insight')">Deep Insight</button>
+            <button class="btn btn-outline-primary" (click)="routeToGiven('graph')">Analytics</button>
+        </div>
+    </div>
+
+    <!-- Match Not Started Section -->
+    <div *ngIf="status === 0 && !match?.matchComplete" class="match-status bg-warning text-white text-center p-3 mb-4">
+        <h3>Match Not Started</h3>
+        <p>The match between <strong>{{ match?.team1Name | titlecase }}</strong> and <strong>{{ match?.team2Name | titlecase }}</strong> is scheduled to start soon.</p>
+    </div>
+
+    <!-- Match Details Cards (Visible only when match is completed) -->
+    <div *ngIf="status === 0 && match?.matchComplete" class="match-details-cards row justify-content-center">
+        <!-- Team 1 Details -->
+        <div class="col-md-6">
+            <div class="card team-card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ match?.team1Name | titlecase }}</h5>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Player</th>
+                                <th>Runs</th>
+                                <th>Balls Faced</th>
+                                <th>Overs</th>
+                                <th>Wickets</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let player of match?.team1Players">
+                                <td>{{ player?.playerName }}</td>
+                                <td>{{ player?.playerRuns }}</td>
+                                <td>{{ player?.ballsFaced }}</td>
+                                <td>{{ (player?.ballsBowled / 6) | number: '1.1-1' }}</td>
+                                <td>{{ player?.playerWickets }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total</strong></td>
+                                <td>{{ match?.team1Runs }}</td>
+                                <td>{{ match?.scoreCardTeam1?.length }}</td>
+                                <td>{{ (match?.scoreCardTeam1?.length / 6) | number: '1.1-1' }}</td>
+                                <td>{{ match?.team1FallOfWickets.length }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team 2 Details -->
+        <div class="col-md-6">
+            <div class="card team-card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ match?.team2Name | titlecase }}</h5>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Player</th>
+                                <th>Runs</th>
+                                <th>Balls Faced</th>
+                                <th>Overs</th>
+                                <th>Wickets</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let player of match?.team2Players">
+                                <td>{{ player?.playerName }}</td>
+                                <td>{{ player?.playerRuns }}</td>
+                                <td>{{ player?.ballsFaced }}</td>
+                                <td>{{ (player?.ballsBowled / 6) | number: '1.1-1' }}</td>
+                                <td>{{ player?.playerWickets }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total</strong></td>
+                                <td>{{ match?.team2Runs }}</td>
+                                <td>{{ match?.scoreCardTeam2?.length }}</td>
+                                <td>{{ (match?.scoreCardTeam2?.length / 6) | number: '1.1-1' }}</td>
+                                <td>{{ match?.team2FallOfWickets.length }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

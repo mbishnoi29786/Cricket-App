@@ -1,0 +1,24 @@
+<div class="match-list-container">
+  <!-- Filter Section -->
+  <div class="filter-container">
+    <label class="filter-label" for="dateofbirth">Filter by Date</label>
+    <div class="filter-actions">
+      <input class="coc-input" type="date" name="dateofbirth" id="dateofbirth" (input)="filterMatches($event)">
+      <button class="btn-clear" (click)="reset()">Clear Filter</button>
+    </div>
+  </div>
+
+  <!-- Match Table Section -->
+  <div class="match-table">
+    <app-table [matchList]="matchlist" [route]="route"></app-table>
+  </div>
+
+  <!-- Pagination Section -->
+  <footer class="pagination-footer">
+    <button class="pagination-btn" (click)="onPreviousClick()" [disabled]="page <= 0">Previous</button>
+    <div class="pagination-counter">
+      <span class="pagination-number">{{ page + 1 }}</span> / <span class="pagination-number">{{ totalPages }}</span>
+    </div>
+    <button class="pagination-btn" (click)="onNextClick()" [disabled]="page + 1 >= totalPages">Next</button>
+  </footer>
+</div>

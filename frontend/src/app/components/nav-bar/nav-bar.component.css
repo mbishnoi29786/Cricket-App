@@ -1,0 +1,117 @@
+/* Base Styles */
+
+.navbar {
+    background-color: #2d3e50; 
+    padding: 1rem 2rem; 
+}
+
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 700; 
+    color: #ffffff !important; 
+    letter-spacing: 1px; 
+    cursor: pointer;
+}
+
+
+.navbar-toggler {
+    border-color: transparent; 
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff; 
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-left: auto;
+}
+
+.nav-item {
+    list-style: none;
+}
+
+.nav-item button {
+    background-color: transparent;
+    border: 2px solid transparent;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    border-radius: 8px; 
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover and Active Button States */
+.nav-item button:hover {
+    background-color: #f39c12; /* Golden yellow on hover */
+    border-color: #f39c12;
+    color: #ffffff;
+}
+
+.nav-item button:focus {
+    outline: none;  
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-color: #ffffff; 
+}
+
+.btn-outline-primary {
+    border-color: #2980b9;
+    color: #2980b9;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #2980b9;
+    color: #ffffff;
+    border-color: #2980b9;
+}
+
+.btn-outline-primary:focus {
+    outline: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+.navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navbar-collapse {
+    justify-content: center;
+}
+
+.nav-item button {
+    width: 100%; 
+    text-align: center;
+}
+}
+
+/* Active state for the navbar item */
+.nav-item button.active {
+    background-color: #2980b9;
+    color: #ffffff;
+    border-color: #2980b9;
+}
+
+/* Center the Toaster component */
+.nav-item.mx-auto {
+    margin: 0 auto;
+    display: block;
+}
+
+button {
+    outline: none;
+}
+
+button:focus {
+    box-shadow: none;
+}
