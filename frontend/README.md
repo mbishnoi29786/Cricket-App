@@ -29,8 +29,9 @@ npm install -g @angular/cli
 
 1.Clone the repository: Clone the repository to your local machine.
 
-git clone [Cricket-App](https://github.com/mbishnoi29786/Cricket-App.git)
-
+```bash
+git clone https://github.com/mbishnoi29786/Cricket-App.git
+```
 2.Navigate to the frontend directory: Change the directory to the frontend folder.
 
 ```bash
