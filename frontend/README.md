@@ -7,6 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 **Cricket App** is a full-fledged application designed to manage and view cricket matches, scorecards, and deep insights. It includes features like live scores, match analytics, player management, and scheduling. This project is the **frontend** part of the app, built using **Angular** and Firebase.
 
 ### Key Features:
+
 - **User Login and Match Scheduling**: Users can log in, schedule matches, and manage teams and players.
 - **Live Scores and Match Details**: View real-time scores and match details for ongoing matches.
 - **Analytics**: Visualize match data with interactive graphs like bar charts, pie charts, etc.
@@ -17,37 +18,37 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Requirements
 
 - **Angular CLI**: Ensure you have the Angular CLI installed on your system.
-  ```bash
-  npm install -g @angular/cli
-  ```
+
+```bash
+npm install -g @angular/cli
+```
 
 - **Node.js**: This project requires Node.js (v16 or later) for package management.
 
-
 ## Installation
+
 1.Clone the repository: Clone the repository to your local machine.
 
-  ```bash
-
 git clone [Cricket-App](https://github.com/mbishnoi29786/Cricket-App.git)
-  ```
 
 2.Navigate to the frontend directory: Change the directory to the frontend folder.
 
 ```bash
 cd frontend
 ```
+
 3.Install dependencies: Install all required dependencies using npm.
 
 ```bash
-    npm install
+npm install
 ```
+
 4.Run the development server: Start the Angular development server to launch the application.
 
 ```bash
-
 ng serve
 ```
+
 After the server starts, you can access the app in your browser at http://localhost:4200/.
 
 ## Configuration
@@ -57,30 +58,33 @@ After the server starts, you can access the app in your browser at http://localh
 2. API URL: The app communicates with the backend (Node.js + Express API) to fetch data. The base API URL is set in the src/app/environment/environment.ts file:
 
 ```typescript
-    export const url = 'http://localhost:8000'; 
+export const url = "http://localhost:8000";
 ```
+
 Make sure your backend is running on this URL.
 
 ## Features
+
 1. User Authentication
-    Users must log in to schedule matches, add players, and view detailed match insights.
-    Non-logged-in users can only see live scores and match details for completed games.
+   Users must log in to schedule matches, add players, and view detailed match insights.
+   Non-logged-in users can only see live scores and match details for completed games.
 2. Match Scheduling
-    Users can schedule a match by selecting two teams, assigning 11 players to each team, and choosing who will bat first.
+   Users can schedule a match by selecting two teams, assigning 11 players to each team, and choosing who will bat first.
 3. Live Scores
-    Users can see live scores during ongoing matches. The scores and match status update in real-time.
+   Users can see live scores during ongoing matches. The scores and match status update in real-time.
 4. Match Analytics
-    For completed matches, users can view match analytics, including:
-        Bar charts and pie charts showing the runs scored by each team in each over.
-        A detailed scorecard with batting and bowling performance for each player.
+   For completed matches, users can view match analytics, including:
+   Bar charts and pie charts showing the runs scored by each team in each over.
+   A detailed scorecard with batting and bowling performance for each player.
 5. Deep Insights
-    View detailed insights on each match, including:
-        Which bowler bowled each over.
-        Runs scored by each batsman.
-        Player dismissals (e.g., how the player got out, runs scored, etc.).
-        A tabular view of match events, showing performance by over for both teams.
+   View detailed insights on each match, including:
+   Which bowler bowled each over.
+   Runs scored by each batsman.
+   Player dismissals (e.g., how the player got out, runs scored, etc.).
+   A tabular view of match events, showing performance by over for both teams.
 
 ## Dependencies
+
 This project uses several libraries and dependencies. You can find them in the package.json file.
 
 Key dependencies include:
@@ -90,6 +94,7 @@ Bootstrap: For responsive design and UI components.
 ngx-toastr: For displaying notifications.
 rxjs: For handling asynchronous events.
 zone.js: For running Angular’s change detection mechanism.
+
 ```json
 "dependencies": {
   "ngx-toastr": "^14.2.0",
@@ -100,6 +105,7 @@ zone.js: For running Angular’s change detection mechanism.
 ```
 
 ## Directory Structure
+
 The project structure is as follows:
 
 ```ruby
@@ -128,107 +134,83 @@ frontend/
 ```
 
 ## Running Tests
+
 ### Unit Tests:
+
 To run unit tests using Karma, use the following command:
 
 ```bash
-
 ng test
 ```
 
 ### End-to-End Tests:
+
 To run end-to-end tests, you first need to install a package that provides end-to-end testing capabilities, then run:
 
 ```bash
-    ng e2e
+ng e2e
 ```
 
 ## Code Scaffolding
+
 To generate new components, services, directives, etc., use Angular CLI commands:
 
 ### Generate a component:
 
 ```bash
-    ng generate component component-name
+ng generate component component-name
 ```
 
 ### Generate a service:
 
 ```bash
-    ng generate service service-name
+ng generate service service-name
 ```
 
 ### Generate a pipe:
 
 ```bash
-    ng generate pipe pipe-name
+ng generate pipe pipe-name
 ```
+
 For more options, you can also use ng generate to create other Angular constructs such as guards, modules, etc.
 
 ## Build
+
 To build the project for production, use:
 
 ```bash
-    ng build --prod
+ng build --prod
 ```
+
 The build output will be stored in the dist/ directory, ready for deployment.
 
 ## Further Help
+
 For additional help with the Angular CLI, you can use:
 
 ```bash
-    ng help
+ng help
 ```
+
 Alternatively, refer to the Angular CLI Overview and Command Reference.
 
 ## Contributing
+
 1. Fork the repository.
 2. Create a feature branch (git checkout -b feature-name).
 3. Commit your changes (git commit -am 'Add new feature').
 4. Push to your branch (git push origin feature-name).
 5. Open a pull request.
 
-
 ## Acknowledgments
+
 Angular for building the application framework.
 Bootstrap for responsive design components.
 ngx-toastr for toast notifications.
 Firebase for real-time data management.
 
-
 ```yaml
 ---
-    This README includes all the necessary details for your project, along with the development and testing commands, feature descriptions, and setup instructions. You can copy and paste this directly into your `README.md` file in the frontend folder. Let me know if you'd like to make any adjustments or if you need any further help!
+This README includes all the necessary details for your project, along with the development and testing commands, feature descriptions, and setup instructions. You can copy and paste this directly into your `README.md` file in the frontend folder. Let me know if you'd like to make any adjustments or if you need any further help!
 ```
-
-
-
-=======
-# CricketApp
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
